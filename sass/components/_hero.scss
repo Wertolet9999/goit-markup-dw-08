@@ -1,0 +1,23 @@
+.hero {
+    max-width: 1600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    text-align: center;
+}
+
+.hero__title {
+    margin-bottom: 30px;
+    max-width: 696px;
+    @include marginCentered(auto,auto);
+
+    color: $white-color;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.hero__button {
+    padding: 10px 32px;
+    min-width: 216px;
+}

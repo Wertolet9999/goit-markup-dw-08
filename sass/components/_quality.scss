@@ -1,0 +1,33 @@
+.quality-list {
+
+    @include centeredFlex(flex,null,null);
+        &__icon {
+                width: 70px;
+                height: 70px;
+            }
+        
+            &__item:not(:last-child) {
+                margin-right: 30px;
+            }
+}
+.quality-list__bg {
+    @include centeredFlex(flex,center,center);
+    width: 270px;
+    height: 120px;
+    background-color: $background-color;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.quality-list__title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+ 
+.quality-list__subtitle {
+    margin: 0;
+    color: $secondary-text-color;
+    line-height: 1.71;
+}

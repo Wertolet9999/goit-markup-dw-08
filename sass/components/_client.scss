@@ -1,0 +1,28 @@
+.client-list {
+   @include centeredFlex(flex, space-between, null)
+
+}
+
+.client-list__link {
+    display: flex;
+    border: 1px solid $icon-color;
+    border-radius: 4px;
+    transition: border-color $animation;
+
+    &:hover,
+    &:focus{
+        border-color: $accent-color;
+    }
+}
+.client-list__icon {
+    width: 170px;
+    height: 92px;
+    fill: $icon-color;
+    transition: fill $animation;
+
+    .client-list__link:hover &,
+    .client-list__link:focus & {
+        fill: $accent-color;
+    }
+
+}

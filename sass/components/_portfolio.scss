@@ -1,0 +1,110 @@
+.button__list {
+    @include centeredFlex(flex, center, null);
+    margin-bottom: 50px;
+}
+
+.nav-button {
+    border-radius: 4px;
+        padding: 6px 25px;
+        min-width: 73px;
+        border: 1px solid transparent;
+    
+        font-family: 'Roboto'; 
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.63;
+        cursor: pointer;
+        letter-spacing: 0.03em;
+        transition: background-color $animation,
+                    color $animation,
+                    box-shadow $animation;
+
+        &:not(:first-child) {
+                padding: 6px 22px;
+            }
+
+        &:hover,
+        &:focus {
+            background-color: $accent-color;
+            color: $white-color;
+            box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
+                        0px 1px 2px rgba(0, 0, 0, 0.08), 
+                        0px 2px 2px rgba(0, 0, 0, 0.12);
+             }
+}
+
+.button-list__item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.portfolio-project__link {
+    transition: box-shadow $animation;
+
+    &:hover,
+    &:focus{
+        display: block;
+            box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+                0px 1px 2px rgba(0, 0, 0, 0.08),
+                0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    &:hover .portfolio__overlay-text,
+    &:focus .portfolio__overlay-text{
+        transform: translateY(0);
+        }
+}
+
+.portfolio-project__thumb {
+    position: relative;
+    overflow: hidden;
+}
+.portfolio__overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 63px 24px;
+
+    font-size: 18px;
+    line-height: 1.56;
+    color: $white-color;
+
+    transform: translateY(100%);
+    transition: transform $animation;
+
+    background-color: $accent-color;
+    opacity: 0.9;
+}
+
+.portfolio__background {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: $white-color;
+    border: 1px solid $border-color;
+    border-top: none;
+
+}
+
+.portfolio__project-title {
+    color: $primary-text-color;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+
+.portfolio__project-text {
+    margin-bottom: 0;
+    color: $secondary-text-color;
+    font-size: 16px;
+    line-height: 1.9;
+}

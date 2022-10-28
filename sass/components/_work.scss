@@ -1,0 +1,29 @@
+.work {
+    padding-top: 0;
+}
+
+.work-list {
+    @include centeredFlex(flex, space-between, null);
+
+    &__item{
+        position: relative;
+    }
+    &__overlay{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include centeredFlex(flex, center, center);
+        background: rgba(47, 48, 58, 0.8);
+        width: 370px;
+        height: 70px;
+    }
+    &__overlay-text{
+        margin: 0;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.14;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white-color;
+    }
+}

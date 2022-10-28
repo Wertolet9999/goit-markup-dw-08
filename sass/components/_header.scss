@@ -1,0 +1,9 @@
+.header {
+    border-bottom: 1px solid $border-color;
+}
+.header__container {
+    @include centeredFlex(flex,null,null);
+}
+.logo__part--col{
+    color: $accent-color;
+}

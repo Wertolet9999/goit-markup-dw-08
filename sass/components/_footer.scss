@@ -1,0 +1,105 @@
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: $visual-text-color;
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: 20px;
+    min-width: 145px;
+    color: $white-color;
+}
+
+.local {
+    color: $white-color;
+    font-style: normal;
+    line-height: 1.71;
+}
+
+.footer-contacts__link {
+
+    color:$footer-text-color;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.71;
+
+        &:hover,
+        &:focus{
+            color: $accent-color;
+    }
+}
+
+.footer-social__title,
+.footer-form__title {
+    margin-bottom: 20px;
+    color: $white-color;
+    line-height: 1.14;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer-container {
+    @include centeredFlex(flex, null, baseline);
+    gap: 70px;
+}
+
+.footer-contacts__item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.footer-social__item {
+    background-color: $footer-icon-color;
+    border-radius: 50%;
+}
+
+.footer-social__icon {
+    fill: $white-color;
+}
+
+.footer-form {
+    margin-left: auto;
+}
+.footer-form__container {
+    @include centeredFlex(flex, null, null)
+}
+.footer-form__input {
+    width: 358px;
+    height: 50px;
+    margin-right: 12px;
+    padding-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: $visual-text-color;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    outline: none;
+    transform: border $animation;
+
+    &::placeholder {
+        margin: 0;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 1.25;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    &:focus{
+        border-color: $accent-color;
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 1.25;
+        color: $white-color;
+    }
+}
+.form-button {
+    @include centeredFlex(flex, center, center);
+    gap: 10px;
+    width: 200px;
+    height: 50px;
+    transition: box-shadow $animation;
+
+    &__icon {
+        fill: $white-color;
+    }
+}

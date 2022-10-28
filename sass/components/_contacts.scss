@@ -1,0 +1,33 @@
+.contacts {
+    @include centeredFlex(flex, null, center);
+
+    &__item:not(:last-child){
+        margin-right: 50px;
+    }
+}
+
+
+.contacts__link {
+    @include centeredFlex(flex, null, center);
+    color: $secondary-text-color;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    transition: color $animation;
+    
+        &:hover,
+        &:focus{
+            color: $accent-color;
+        }
+}
+.contacts__icon {
+    margin-right: 10px;
+    fill: $secondary-text-color;
+    transition: fill $animation;
+
+    .contacts__link:hover &,
+    .contacts__link:focus & {
+            fill: $accent-color;
+    
+        }
+}

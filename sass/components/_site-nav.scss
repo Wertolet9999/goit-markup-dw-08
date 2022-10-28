@@ -1,0 +1,41 @@
+.site-nav{
+    @include centeredFlex(flex);
+
+    &__item:not(:last-child){
+        margin-right: 50px;
+    }
+}
+.site-nav__link {
+        position: relative;
+        display: block;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        
+        color: $primary-text-color;
+        font-weight: 500;
+        line-height: 1.14;
+        letter-spacing: 0.02em;
+        
+        transition: color $animation;
+
+        &:hover,
+        &:focus {
+        color: $accent-color;
+        }
+    }    
+
+.site-nav__link--current{
+    color: $accent-color;
+}
+.site-nav__link--current-line::after{
+    position: absolute;
+    
+        bottom: -1px;
+    
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: $accent-color;
+        border-radius: 2px;
+}

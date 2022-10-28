@@ -1,0 +1,9 @@
+.nav{
+    @include centeredFlex(flex, null, center);
+    margin-right: auto;
+}
+.nav__logo{
+    margin-right: 93px;
+    padding-top: 24px;
+    padding-bottom: 25px;
+}

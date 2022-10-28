@@ -1,0 +1,9 @@
+@mixin centeredFlex($displ:flex,$justCont:center,$aliItm:center) {
+   display: $displ;
+   justify-content: $justCont;
+   align-items: $aliItm; 
+}
+@mixin marginCentered($margRight:auto,$margLeft:auto) {
+    margin-right: $margRight;
+    margin-left: $margLeft;
+}
