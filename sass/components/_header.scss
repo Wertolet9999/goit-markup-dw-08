@@ -1,8 +1,20 @@
 .header {
     border-bottom: 1px solid $border-color;
-}
+    @media (max-width: 767px) {
+            padding: 10px 0;
+        }
+    
+     @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+           
 .header__container {
-    @include centeredFlex(flex,null,null);
+    @media screen and(min-width: 768px) {
+        @include centeredFlex(flex, space-between,center);
+       
+    }
+ 
 }
 .logo__part--col{
     color: $accent-color;

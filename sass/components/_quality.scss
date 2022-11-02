@@ -1,33 +1,49 @@
 .quality-list {
+    @media screen and(min-width: 768px) {
+        @include centeredFlex(flex, null, null);
+        flex-wrap: wrap;
+        gap: 30px;
+    }
 
-    @include centeredFlex(flex,null,null);
-        &__icon {
+        &__item{
+            @media screen and(min-width: 768px){
+                flex-basis: calc((100% - 30px) / 2);
+            }
+            @media screen and(min-width: 1200px){
+                flex-basis: calc((100% - 90px) / 4);;
+                
+            }
+        }
+         &__item:not(:last-child){
+            @media screen and(max-width: 768px) {
+                margin-bottom: 30px;
+            }
+         }
+         &__bg{
+            @include centeredFlex(flex, center,center);
+            width: 100%;
+            height: 120px;
+            margin-bottom: 30px;
+            background-color: $background-color;
+            border-radius: 4px;
+         }
+        &__icon {  
                 width: 70px;
                 height: 70px;
             }
-        
-            &__item:not(:last-child) {
-                margin-right: 30px;
+        &__title{
+            margin-bottom: 10px;
+            line-height: 1.14;
+            text-transform: uppercase;
+            @media screen and(max-width: 768px) {
+                text-align: center;
             }
-}
-.quality-list__bg {
-    @include centeredFlex(flex,center,center);
-    width: 270px;
-    height: 120px;
-    background-color: $background-color;
-    border-radius: 4px;
-    margin-bottom: 30px;
+        }
+        &__subtitle{
+            
+            color: $secondary-text-color;
+            line-height: 1.71;
+        }
 }
 
-.quality-list__title {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1.14;
-    text-transform: uppercase;
-}
- 
-.quality-list__subtitle {
-    margin: 0;
-    color: $secondary-text-color;
-    line-height: 1.71;
-}
+    

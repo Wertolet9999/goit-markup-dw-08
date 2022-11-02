@@ -1,3 +1,4 @@
+
 .modal {
     position: absolute;
     top: 50%;
@@ -5,12 +6,26 @@
     transform: translate(-50%, -50%) scale(1);
     transition: transform $animation;
     padding-top: 40px;
-    height: 581px;
-    width: 528px;
     background-color: $white-color;
-
+    height: 609px;
+        @media screen and(max-width: 479px) {
+            width: 100%;
+           
+        }
+         @media screen and(min-width: 480px) {
+            width: 450px;
+            
+        }
+        @media screen and(min-width: 1200px) {
+            width: 528px;
+            height: 581px;
+        }
 }
-
+.modal-container{
+        @media screen and(max-width: 1199px) {
+            padding: 0 40px;  
+        }
+}
 .modal__close-button {
     width: 30px;
     height: 30px;
@@ -22,38 +37,46 @@
     border: 1px solid $close-button-border;
     border-radius: 50%;
     cursor: pointer;
-    transition: fill $animation;
-
-    &:hover,
-    &:focus{
-        fill: $accent-color;
-    }
+    fill: $primary-text-color;      
 }
-
+.modal__close-icon{
+    fill: $primary-text-color;
+    transition: fill $animation;
+        &:hover,
+        &:focus {
+            fill: $accent-color;
+        }
+}
 .modal__title {
     font-weight: 700;
     font-size: 20px;
     line-height: 1.15;
     text-align: center;
     margin-bottom: 12px;
+        @media screen and(max-width: 1199px) {
+            line-height: 1.5;
+        }
 }
-
 .form-box {
-    width: 448px; 
-    @include marginCentered(auto,auto);
+    @include marginCentered(auto, auto);
     margin-bottom: 20px;
     padding: 0;
+        @media screen and(max-width: 1199px) {
+            width: 100%;
+        }
+        @media screen and(min-width: 1200px) {
+            width: 448px;
+        }
 
-    &__field:not(:last-child){
-        margin-bottom: 10px;
-    }
+        &__field:not(:last-child) {
+            margin-bottom: 10px;
+        }
 
-    &__field{
-        display: flex;
-        flex-direction: column;
-    }
+        &__field {
+            display: flex;
+            flex-direction: column;
+        }
 }
-
 .form-box__label {
     margin-bottom: 4px;
     font-family: 'Roboto';
@@ -62,11 +85,9 @@
     letter-spacing: 0.01em;
     color: $secondary-text-color;
 }
-
 .form-box-input {
     position: relative;
     margin: 0;
-
 }
 .form-box-input__text {
     position: relative;
@@ -79,10 +100,10 @@
     outline: none;
     transition: border-color $animation;
 
-    &:focus {
+        &:focus {
             border-color: $accent-color;
         }
-    
+
         &:focus~.form-box-input--icon {
             fill: $accent-color;
         }
@@ -106,12 +127,12 @@
     cursor: pointer;
     transition: border-color $animation;
 
-        &:focus{
+        &:focus {
             border-color: $accent-color;
             outline: none;
         }
 
-        &::placeholder{
+         &::placeholder {
             font-family: 'Roboto';
             font-size: 12px;
             line-height: 1.17;
@@ -119,6 +140,7 @@
             color: rgba(117, 117, 117, 0.5);
         }
 }
+
 .form-box__accept-field {
     @include centeredFlex(flex, center, center);
     gap: 7px;
@@ -128,8 +150,17 @@
     font-size: 14px;
     line-height: 1.71;
     color: $secondary-text-color;
+        @media screen and(max-width:479px) {
+            flex-wrap: wrap;
+        }
+        @media screen and(max-width: 1199px) {
+            font-size: 12px;
+            line-height: 1.17;
+            justify-content: flex-start;
+        }
 }
-.form-box__accept-link{
+
+.form-box__accept-link {
     text-decoration-line: underline;
     color: $accent-color;
     text-decoration-skip-ink: none;
@@ -147,10 +178,11 @@
     transition: box-shadow $animation;
 
         &:hover,
-        &:focus{
+        &:focus {
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
         }
 }
+
 .form-box__check-icon {
     opacity: 0;
 }
@@ -160,15 +192,14 @@
     opacity: 0;
     z-index: -1;
 
-    &:checked + .form-box__accept-field .form-box__checkbox-icon {
-    
+        &:checked+.form-box__accept-field .form-box__checkbox-icon {
             border-color: $accent-color;
             background-color: $accent-color;
         }
 
-    &:checked +.form-box__accept-field .form-box__checkbox-icon .form-box__check-icon {
-        opacity: 1;
-    }
+        &:checked+.form-box__accept-field .form-box__checkbox-icon .form-box__check-icon {
+            opacity: 1;
+        }
 }
 
 .form-box__checkbox-icon {
@@ -181,5 +212,3 @@
     transition: background-color $animation,
     border-color $animation;
 }
-
-

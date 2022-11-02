@@ -1,10 +1,26 @@
-.client-list {
-   @include centeredFlex(flex, space-between, null)
 
+.client-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.client-list__item{
+    height: 92px;
+        flex-basis: calc((100% - 30px) / 2);
+    
+        @media (min-width: 768px) {
+            flex-basis: calc((100% - 60px) / 3);
+        }
+    
+        @media (min-width: 1200px) {
+            flex-basis: calc((100% - 150px) / 6);
+        }
 }
 
 .client-list__link {
-    display: flex;
+    height: 100%;
+    width: 100%;
+    @include centeredFlex();
     border: 1px solid $icon-color;
     border-radius: 4px;
     transition: border-color $animation;
@@ -15,8 +31,8 @@
     }
 }
 .client-list__icon {
-    width: 170px;
-    height: 92px;
+    width: 106px;
+    height: 60px;
     fill: $icon-color;
     transition: fill $animation;
 

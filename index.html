@@ -14,20 +14,24 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
-
-<body>
-    
+<body>  
     <header class="header">
         <!--Navigation panel-->
-        <div class="header__container container">
+        <div class="container header__container">
             <nav class="nav">
                 <!--Webpage logo-->
                 <a href="./index.html" class="nav__logo logo">
                     <span class="logo__part logo__part--col">Web</span>Studio
                 </a>
-                <ul class="site-nav">
+                <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="menu-toggle--icon" width="24" height="24" >
+                        <use href="./images/icons.svg#icon-menu"></use>
+                    </svg>
+                    </button>     
+                <ul class="site-nav menu">
                     <li class="site-nav__item">
-                        <a href="./index.html" class="site-nav__link  site-nav__link--current site-nav__link--current-line">Студія</a>
+                        <a href="./index.html"
+                            class="site-nav__link  site-nav__link--current site-nav__link--current-line">Студія</a>
                     </li>
                     <li class="site-nav__item">
                         <a href="./portfolio.html" class="site-nav__link">Портфоліо</a>
@@ -38,26 +42,26 @@
                 </ul>
             </nav>
             <!--Contacts-->
-            <ul class="contacts">
+            <ul class="contacts menu">
                 <li class="contacts__item">
                     <a href="mailto:info@devstudio.com" class="contacts__link">
                         <svg class="contacts__icon" width="16" height="12">
                             <use href="./images/icons.svg#icon-envelope"></use>
                         </svg>
-                   info@devstudio.com</a></li>
+                        info@devstudio.com</a>
+                </li>
                 <li class="contacts__item">
                     <a href="tel:+380961111111" class="contacts__link">
                         <svg class="contacts__icon" width="10" height="16">
                             <use href="./images/icons.svg#icon-telephone"></use>
                         </svg>
-                    +38 096 111 11 11</a></li>
+                        +38 096 111 11 11</a>
+                </li>
             </ul>
         </div>
-
     </header>
-
-    <!--Main content-->
-    <main>
+<!--Main content-->
+ <main>
         <div class="overlay">
         <section class="hero">
             <div class="container">
@@ -69,7 +73,6 @@
         <section class="section quality">
             <div class="container">
                 <h2 class="section__title visually-hidden">Якості</h2>
-                <!--Hide in css-->
                 <ul class="quality-list">
                     <li class="quality-list__item">
                         <div class="quality-list__bg">
@@ -114,26 +117,28 @@
                 </ul>
             </div>
         </section>
-        <!--Images list-->
-
+ <!-- Work section -->
         <section class="section work">
             <div class="container">
             <h2 class="section__title work__title">Чим ми займаємося</h2>
                 <ul class="work-list">
                     <li class="work-list__item">
-                        <img class="work-list__image" src="./images/webstudio1.jpg" alt="кодинг" width="370">
+                        <img class="work-list__image" srcset="./images/desktop@1x.jpg 1x, ./images/desktop@2x.jpg 2x"
+                            src="./images/desktop@1x.jpg" alt="кодинг">                        
                         <div class="work-list__overlay">
                             <p class="work-list__overlay-text">Десктопні додатки</p>
                         </div>
                     </li>
-                    <li class="work-list__item">
-                        <img class="work-list__image" src="./images/webstudio2.jpg" alt="адаптація" width="370">
+                    <li class="work-list__item">                   
+                        <img class="work-list__image" srcset="./images/phone@1x.jpg 1x, ./images/phone@2x.jpg 2x"
+                            src="./images/phone@1x.jpg" alt="адаптація">                      
                         <div class="work-list__overlay">
                             <p class="work-list__overlay-text">Мобільні додатки</p>
                         </div>
                     </li>
                     <li class="work-list__item">
-                        <img class="work-list__image" src="./images/webstudio3.jpg" alt="дизайн" width="370">
+                        <img class="work-list__image" srcset="./images/tablet@1x.jpg 1x, ./images/tablet@2x.jpg 2x" 
+                        src="./images/tablet@1x.jpg" alt="адаптація">
                         <div class="work-list__overlay">
                             <p class="work-list__overlay-text">Дизайнерські рішення</p>
                         </div>
@@ -141,13 +146,20 @@
                 </ul>
             </div>
         </section>
-        <!--Team list-->
+<!--Team section-->
         <section class="section team">
             <div class="container">
             <h2 class="section__title team__title">Наша команда</h2>
                 <ul class="team-list">
                     <li class="team-list__item">
-                        <img class="team-list_image" src="./images/igor.jpg" alt="дизайнер" width="270">
+                        <picture>
+                            <source srcset="./images/mob/mob-igor@1x.jpg 1x, ./images/mob/mob-igor@2x.jpg 2x" media="(min-width:40px)"
+                                      type="image/jpg"/>
+                            <source srcset="./images/tab/tab-igor@1x.jpg 1x, ./images/tab/tab-igor@2x.jpg 2x" media="(min-width:768px)" 
+                                      type="image/jpg"/>
+                            <img srcset="./images/desk/desk-igor@1x.jpg 1x, ./images/desk/desk-igor@2x.jpg 2x" 
+                                    src="./images/desk/desk-igor@1x.jpg" alt="дизайнер">
+                        </picture>                               
                         <div class="team-signature">
                         <h3 class="team-list__title">Ігор Дем'яненко</h3>
                         <p class="team-list__description-text">Product Designer</p>
@@ -188,10 +200,18 @@
                         </div>
                     </li>
                     <li class="team-list__item">
-                        <img class="team-list_image" src="./images/olga.jpg" alt="фронт-енд розробник" width="270">
+                        <picture>
+                            <source srcset="./images/mob/mob-olga@1x.jpg 1x, ./images/mob/mob-olga@2x.jpg 2x" media="(min-width:480px)"
+                                type="image/jpg" />
+                            <source srcset="./images/tab/tab-olga@1x.jpg 1x, ./images/tab/tab-olga@2x.jpg 2x" media="(min-width:768px)"
+                                type="image/jpg" />
+                                                
+                            <img srcset="./images/desk/desk-olga@1x.jpg 1x, ./images/desk/desk-olga@2x.jpg 2x"
+                                src="./images/desk/desk-olga@1x.jpg" alt="фронт-енд розробник">
+                        </picture>                       
                         <div class="team-signature">
-                        <h3 class="team-list__title">Ольга Рєпіна</h3>
-                        <p class="team-list__description-text">Frontend Developer</p>
+                            <h3 class="team-list__title">Ольга Рєпіна</h3>
+                            <p class="team-list__description-text">Frontend Developer</p>
                         <ul class="social-list">
                             <li class="social-list__item">
                                 <a href="" class="social-list--link">
@@ -229,10 +249,18 @@
                         </div>
                     </li>
                     <li class="team-list__item">
-                        <img class="team-list_image" src="./images/mikola.jpg" alt="маркетинг" width="270">
+                        <picture>
+                            <source srcset="./images/mob/mob-mikola@1x.jpg 1x, ./images/mob/mob-mikola@2x.jpg 2x" media="(min-width:480px)"
+                                type="image/jpg" />
+                            <source srcset="./images/tab/tab-mikola@1x.jpg 1x, ./images/tab/tab-mikola@2x.jpg 2x" media="(min-width:768px)"
+                                type="image/jpg" />
+                        
+                            <img srcset="./images/desk/desk-mikola@1x.jpg 1x, ./images/desk/desk-mikola@2x.jpg 2x"
+                                src="./images/desk/desk-mikola@1x.jpg" alt="маркетинг">
+                        </picture>                       
                         <div class="team-signature">
-                        <h3 class="team-list__title">Микола Тарасов</h3>
-                        <p class="team-list__description-text">Marketing</p>
+                            <h3 class="team-list__title">Микола Тарасов</h3>
+                            <p class="team-list__description-text">Marketing</p>
                         <ul class="social-list">
                             <li class="social-list__item">
                                 <a href="" class="social-list--link">
@@ -270,7 +298,14 @@
                         </div>
                     </li>
                     <li class="team-list__item">
-                        <img class="team-list_image" src="./images/mihaylo.jpg" alt="ui-дизайнер" width="270">
+                        <picture>
+                            <source srcset="./images/mob/mob-mihailo@1x.jpg 1x, ./images/mob/mob-mihailo@2x.jpg 2x" media="(min-width:480px)"
+                                type="image/jpg" />
+                            <source srcset="./images/tab/tab-mihailo@1x.jpg 1x, ./images/tab/tab-mihailo@2x.jpg 2x" media="(min-width:768px)"
+                                type="image/jpg" />                        
+                            <img class="team-list__image" srcset="./images/desk/desk-mihailo@1x.jpg 1x, ./images/desk/desk-mihailo@2x.jpg 2x"
+                                src="./images/desk/desk-mihailo@1x.jpg" alt="ui-дизайнер">
+                        </picture>
                         <div class="team-signature">
                         <h3 class="team-list__title">Михайло Єрмаков</h3>
                         <p class="team-list__description-text">UI Designer</p>
@@ -313,6 +348,7 @@
                 </ul>
             </div>
         </section>
+<!-- Client section -->
         <section class="section client">
             <div class="container">
                 <h2 class="section__title client__title">Постійні клієнти</h2>
@@ -361,12 +397,56 @@
             </li>
         </ul>
         </div>
-        </section>      
+        </section>
     </main>
-    <!--Footer-->
+<!--Footer-->
+<div class="menu-container js-menu-container" id="mobile-menu">
+    <button class="menu-toggle js-close-menu">
+        <svg class="menu-close--icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-close"></use>
+        </svg>       
+    </button>
+<div class="mobile-menu-box">
+    <ul class="mobile-menu">
+        <li class="site-nav__item">
+            <a href="./index.html" class="site-nav__link site-nav__link--current">Студія</a>
+        </li>
+        <li class="site-nav__item">
+            <a href="./portfolio.html" class="site-nav__link">Портфоліо</a>
+        </li>
+        <li class="site-nav__item">
+            <a href="#" class="site-nav__link">Контакти</a>
+        </li>
+    </ul>
+    </div>
+    <ul class="contacts-mobile__list">
+        <li class="contacts-mobile__item">
+            <a href="tel:+380961111111" class="contacts-mobile__link">
+                +38 096 111 11 11</a>
+        </li>
+        <li class="contacts-mobile__item">
+            <a href="mailto:info@devstudio.com" class="contacts-mobile__link">
+                info@devstudio.com</a>
+        </li>
+    </ul>
+    <ul class="social-mobile__list">
+        <li class="social-mobile__item">
+            <a href="" class="social-mobile__link">Instagram</a>
+        </li>
+        <li class="social-mobile__item">
+            <a href="" class="social-mobile__link">Twitter</a>
+        </li>
+        <li class="social-mobile__item">
+            <a href="" class="social-mobile__link">Facebook</a>
+        </li>
+        <li class="social-mobile__item">
+            <a href="" class="social-mobile__link">LinkedIn</a>
+        </li>
+    </ul>
+</div>
     <footer class="footer">
         <div class="container footer-container">
-                <div>
+                <div class="footer-bx footer-containet-box">
                      <a href="./index.html" class="footer-logo logo">
                         <span class="logo__part logo__part--col">Web</span>Studio
                     </a>
@@ -430,7 +510,7 @@
                 </form>                
         </div>
     </footer>
-    <!-- модальне вікно -->
+<!-- модальне вікно -->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <button class="modal__close-button" type="button" data-modal-close>
@@ -438,62 +518,62 @@
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
-            <p class="modal__title">Залиште свої дані, ми вам передзвонимо</p>
-            
-                <!-- форма -->
-            
-            <form class="modal-form">
-
-                    <ul class="form-box">
-                        <li class="form-box__field">
-                            <label class="form-box__label" for="user-name">Ім’я</label>
-                                <p class="form-box-input">
-                                <input class="form-box-input__text" type="text" name="user-name" id="user-name">
-                                <svg class="form-box-input--icon">
-                                    <use href="./images/icons.svg#icon-person"></use>
+            <div class="modal-container">            
+<!-- форма -->
+                <form class="modal-form">
+                    <p class="modal__title">Залиште свої дані, ми вам передзвонимо</p>
+                <ul class="form-box">                 
+                    <li class="form-box__field">
+                        <label class="form-box__label" for="user-name">Ім’я</label>
+                            <p class="form-box-input">
+                        <input class="form-box-input__text" type="text" name="user-name" id="user-name">
+                            <svg class="form-box-input--icon">
+                                <use href="./images/icons.svg#icon-person"></use>
                                 </svg>
                             </p>
-                        </li>
-                        <li class="form-box__field">
-                                <label class="form-box__label" for="tel">Телефон</label>
-                                <p class="form-box-input">
-                                    <input class="form-box-input__text" type="tel" name="tel" id="tel">
-                                    <svg class="form-box-input--icon">
-                                        <use href="./images/icons.svg#icon-phone"></use>
-                                    </svg>
+                    </li>
+                    <li class="form-box__field">
+                        <label class="form-box__label" for="tel">Телефон</label>
+                        <p class="form-box-input">
+                        <input class="form-box-input__text" type="tel" name="tel" id="tel">
+                            <svg class="form-box-input--icon">
+                                <use href="./images/icons.svg#icon-phone"></use>
+                            </svg>
+                        </p>
+                    </li>
+                     <li class="form-box__field">
+                        <label class="form-box__label" for="mail">Пошта</label>
+                             <p class="form-box-input">
+                        <input class="form-box-input__text" type="email" name="mail" id="mail">
+                            <svg class="form-box-input--icon">
+                                <use href="./images/icons.svg#icon-email"></use>
+                            </svg>
                                 </p>
-                                
-                        </li>
-                        <li class="form-box__field">
-                                <label class="form-box__label" for="mail">Пошта</label>
-                                <p class="form-box-input">
-                                    <input class="form-box-input__text" type="email" name="mail" id="mail">
-                                    <svg class="form-box-input--icon">
-                                        <use href="./images/icons.svg#icon-email"></use>
-                                    </svg>
-                                </p>
-                                
-                        </li>
-                        <li class="form-box__field">
-                                <label class="form-box__label" for="comment">Коментар</label>
-                                <textarea class="form-box__textarea" name="comment" id="comment" cols="30" rows="10"
-                                          placeholder="Введіть текст"></textarea>
-                        </li>
-                    </ul>
-                                <input class="form-box__accept-input" type="checkbox" value="check" name="accept" id="accept">
-                                <label class="form-box__accept-field" for="accept">
-                                    <span class="form-box__checkbox-icon">
-                                        <svg class="form-box__check-icon" width="11" height="8">
-                                        <use href="./images/icons.svg#icon-check"></use>
-                                    </svg></span>
-                                    Погоджуюся з розсилкою та приймаю
-                                    <a href="" class="form-box__accept-link">Умови договору</a>
-                                </label>
+                    </li>
+                    <li class="form-box__field">
+                        <label class="form-box__label" for="comment">Коментар</label>
+                        <textarea class="form-box__textarea" name="comment" id="comment" cols="30" rows="10"
+                            placeholder="Введіть текст"></textarea>
+                    </li>
+                 </ul>
+                <input class="form-box__accept-input" type="checkbox" value="check" name="accept" id="accept">
+                <label class="form-box__accept-field" for="accept">
+                    <span class="form-box__checkbox-icon">
+                        <svg class="form-box__check-icon" width="11" height="8">
+                            <use href="./images/icons.svg#icon-check"></use>
+                        </svg>
+                    </span>
+                        Погоджуюся з розсилкою та приймаю
+                    <a href="" class="form-box__accept-link">Умови договору</a>
+                </label>
                 <button class="main-button submit-btn" type="submit">Відправити</button>
             </form>
+            </div>
+            
         </div>
         </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
 </body>
 
 </html>

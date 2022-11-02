@@ -1,14 +1,31 @@
 .contacts {
-    @include centeredFlex(flex, null, center);
+    @media screen and(max-width: 767px){
+        display: none;
+    }
+    @media screen and(min-width:1200px){
+        display: flex;
+        align-items: center;
+       
+    }
 
     &__item:not(:last-child){
-        margin-right: 50px;
+        @media screen and(max-width: 767px){
+            margin-bottom: 32px;
+            
+        }
+        @media screen and(min-width: 768px) and (max-width: 1199px){
+            margin-bottom: 10px;
+            
+        }
+        @media screen and(min-width: 1200px){
+            margin-right: 50px;
+        }
+        
     }
 }
 
-
 .contacts__link {
-    @include centeredFlex(flex, null, center);
+    display: inline-block;
     color: $secondary-text-color;
     font-weight: 500;
     line-height: 1.14;
@@ -19,15 +36,26 @@
         &:focus{
             color: $accent-color;
         }
+
+        @media screen and(max-width: 767px){
+            font-size: 12px;
+            line-height: 1.17;
+        }
+        
 }
+
 .contacts__icon {
-    margin-right: 10px;
     fill: $secondary-text-color;
     transition: fill $animation;
 
-    .contacts__link:hover &,
-    .contacts__link:focus & {
+        .contacts__link:hover &,
+        .contacts__link:focus & {
             fill: $accent-color;
-    
         }
+         @media screen and(max-width: 1199px){
+            margin-right: 8px;
+        }
+         @media screen and(min-width: 1200px){
+            margin-right: 10px;
+    }
 }

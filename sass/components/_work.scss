@@ -1,9 +1,15 @@
 .work {
     padding-top: 0;
+
+    @media screen and(max-width: 1199px) {
+        display: none;
+        
+    }
 }
 
 .work-list {
     @include centeredFlex(flex, space-between, null);
+    gap: 30px;
 
     &__item{
         position: relative;

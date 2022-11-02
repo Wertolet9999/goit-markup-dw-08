@@ -1,0 +1,99 @@
+
+.menu-toggle {
+    min-height: 40px;
+    min-width: 40px;
+    @include centeredFlex(flex, center, center);
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+
+    @media screen and(min-width: 768px){
+        display: none;
+    }
+}
+.menu-toggle--icon{
+    fill: $primary-text-color;
+}
+.menu-close--icon{
+    cursor: pointer;
+    fill:$primary-text-color;
+    transition: color $animation;
+}
+.menu-close--icon:hover,
+.menu-close--icon:focus{
+    fill:$accent-color
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white-color;
+    z-index: 999;
+    padding: 48px 40px 83px 40px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform $animation, opacity $animation;     
+    
+}
+
+.menu-container.is-open {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    
+}
+.contacts-mobile__item:not(:last-child){
+    margin-bottom: 32px;
+}
+.contacts-mobile__link{
+    display: inline-block;   
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: $secondary-text-color;
+    
+        &:hover,
+        &:focus {
+                font-size: 34px;
+                line-height: 1.1;
+                color: $accent-color;
+            }
+}
+
+.social-mobile__list{
+    display: flex;
+    margin-left: -10px;
+    @media screen and(max-width: 479px) {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+}
+.social-mobile__item:not(:last-child){
+    border-right: 1px solid rgba(33, 33, 33, .2);
+}
+.social-mobile__link{
+    display: inline-block;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: $accent-color;
+}
