@@ -692,6 +692,7 @@ img {
 }
 
 .overlay {
+  max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
   background-color: #2F303A;
