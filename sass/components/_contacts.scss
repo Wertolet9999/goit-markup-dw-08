@@ -28,7 +28,8 @@
     display: inline-block;
     color: $secondary-text-color;
     font-weight: 500;
-    line-height: 1.14;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     transition: color $animation;
     
@@ -37,9 +38,9 @@
             color: $accent-color;
         }
 
-        @media screen and(max-width: 767px){
-            font-size: 12px;
-            line-height: 1.17;
+        @media screen and(min-width: 1200px){
+            font-size: inherit;
+            line-height: 1.14;
         }
         
 }

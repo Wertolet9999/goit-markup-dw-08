@@ -659,17 +659,18 @@ img {
   display: inline-block;
   color: #757575;
   font-weight: 500;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts__link:hover, .contacts__link:focus {
   color: #2196F3;
 }
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 1200px) {
   .contacts__link {
-    font-size: 12px;
-    line-height: 1.17;
+    font-size: inherit;
+    line-height: 1.14;
   }
 }
 
@@ -928,12 +929,12 @@ img {
   height: 92px;
   flex-basis: calc((100% - 30px) / 2);
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .client-list__item {
     flex-basis: calc((100% - 60px) / 3);
   }
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .client-list__item {
     flex-basis: calc((100% - 150px) / 6);
   }
@@ -1393,10 +1394,26 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button__list {
+.button-list {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .button-list {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .button-list {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .button-list__item {
+    margin-bottom: 15px;
+  }
 }
 
 .nav-button {
@@ -1425,10 +1442,28 @@ img {
   margin-right: 8px;
 }
 
-.portfolio {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+@media screen and (min-width: 768px) {
+  .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-project {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-project {
+    flex-basis: calc((100% - 60px) / 3);
+  }
+}
+@media (max-width: 767px) {
+  .portfolio-project:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 .portfolio-project__link {
@@ -1472,6 +1507,12 @@ img {
   background: #FFFFFF;
   border: 1px solid #ECECEC;
   border-top: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .portfolio__background--fixed {
+    padding-bottom: 56px;
+  }
 }
 
 .portfolio__project-title {

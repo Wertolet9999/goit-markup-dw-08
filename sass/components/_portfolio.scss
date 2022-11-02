@@ -1,28 +1,40 @@
-.button__list {
-    @include centeredFlex(flex, center, null);
-    margin-bottom: 50px;
+.button-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    @media screen and(min-width: 768px) {
+        justify-content: center;   
+    }
+    @media screen and(min-width: 1200px) {
+        margin-bottom: 50px;
+    }
 }
+.button-list__item{
+    @media screen and(max-width: 767px) {
+        margin-bottom: 15px;
+    }
+
+}
+
+
 
 .nav-button {
     border-radius: 4px;
-        padding: 6px 25px;
-        min-width: 73px;
-        border: 1px solid transparent;
-    
-        font-family: 'Roboto'; 
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.63;
-        cursor: pointer;
-        letter-spacing: 0.03em;
-        transition: background-color $animation,
-                    color $animation,
-                    box-shadow $animation;
-
+    padding: 6px 25px;
+    min-width: 73px;
+    border: 1px solid transparent;
+    font-family: 'Roboto'; 
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.63;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background-color $animation,
+    color $animation,
+    box-shadow $animation;
         &:not(:first-child) {
                 padding: 6px 22px;
             }
-
         &:hover,
         &:focus {
             background-color: $accent-color;
@@ -38,11 +50,31 @@
 }
 
 .portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+    @media screen and(min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
 
+    // @media screen and {
+        
+    // }
+}
+.portfolio-project{
+    @media screen and (min-width: 768px) {
+        flex-basis: calc((100% - 30px) / 2);
+    }
+    
+    @media screen and (min-width: 1200px) {
+        flex-basis: calc((100% - 60px) / 3);
+    }
+    @media (max-width: 767px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+}
 .portfolio-project__link {
     transition: box-shadow $animation;
 
@@ -91,10 +123,13 @@
     padding-right: 24px;
     background: $white-color;
     border: 1px solid $border-color;
-    border-top: none;
-
+    border-top: none; 
 }
-
+.portfolio__background--fixed {
+    @media screen and(min-width: 768px)and(max-width: 1199px) {
+        padding-bottom: 56px;
+    }
+}
 .portfolio__project-title {
     color: $primary-text-color;
     font-size: 18px;

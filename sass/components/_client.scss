@@ -1,19 +1,19 @@
-
 .client-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 30px;  
 }
 .client-list__item{
     height: 92px;
         flex-basis: calc((100% - 30px) / 2);
     
-        @media (min-width: 768px) {
+        @media screen and(min-width: 768px) {
             flex-basis: calc((100% - 60px) / 3);
         }
     
-        @media (min-width: 1200px) {
+        @media screen and(min-width: 1200px) {
             flex-basis: calc((100% - 150px) / 6);
+             
         }
 }
 
@@ -36,8 +36,8 @@
     fill: $icon-color;
     transition: fill $animation;
 
-    .client-list__link:hover &,
-    .client-list__link:focus & {
+.client-list__link:hover &,
+.client-list__link:focus & {
         fill: $accent-color;
     }
 
