@@ -5,7 +5,7 @@
     background-image: linear-gradient(to right,
             rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)),
-            url('../../images/overlay-mobile@1x.jpg');
+            url('../images/overlay-mobile@1x.jpg');
     background-position: center;
     background-size: cover;
         @media screen and(min-device-pixel-ratio: 2), 
@@ -14,34 +14,34 @@
             background-image: linear-gradient(to right,
                 rgba(47, 48, 58, 0.4),
                 rgba(47, 48, 58, 0.4)),
-            url('../../images/overlay-mobile@2x.jpg');
+            url('../images/overlay-mobile@2x.jpg');
     } 
         @media screen and(min-width: 768px) {
             background-image: linear-gradient(to right,
                 rgba(47, 48, 58, 0.4),
                 rgba(47, 48, 58, 0.4)),
-            url('../../images/overlay-tablet@1x.jpg');
+            url('../images/overlay-tablet@1x.jpg');
                 @media (min-device-pixel-ratio: 2),
                     (min-resolution: 192dpi),
                     (min-resolution: 2dppx) {
                         background-image: linear-gradient(to right,
                                 rgba(47, 48, 58, 0.4),
                                 rgba(47, 48, 58, 0.4)),
-                            url('../../images/overlay-tablet@2x.jpg');
+                            url('../images/overlay-tablet@2x.jpg');
                     }   
     }
         @media screen and(min-width: 1200px) {
             background-image: linear-gradient(to right,
                     rgba(47, 48, 58, 0.4),
                     rgba(47, 48, 58, 0.4)),
-                url('../../images/overlay-desctop@1x.jpg');
+                url('../images/overlay-desctop@1x.jpg');
                 @media screen and(min-device-pixel-ratio: 2),
                     (min-resolution: 192dpi),
                     (min-resolution: 2dppx) {
                         background-image: linear-gradient(to right,
                                 rgba(47, 48, 58, 0.4),
                                 rgba(47, 48, 58, 0.4)),
-                            url('../../images/overlay-desctop@2x.jpg');
+                            url('../images/overlay-desctop@2x.jpg');
                     } 
     }
 }
