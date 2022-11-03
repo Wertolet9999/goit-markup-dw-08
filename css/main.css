@@ -819,7 +819,7 @@ img {
   line-height: 1.14;
   text-transform: uppercase;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 479px) {
   .quality-list__title {
     text-align: center;
   }
@@ -1327,11 +1327,6 @@ img {
   font-size: 14px;
   line-height: 1.71;
   color: #757575;
-}
-@media screen and (max-width: 479px) {
-  .form-box__accept-field {
-    flex-wrap: wrap;
-  }
 }
 @media screen and (max-width: 1199px) {
   .form-box__accept-field {
